@@ -14,7 +14,7 @@ const uploadMiddleware = multer({ dest: 'uploads/' })
 
 const app = express();
 const salt = bcrypt.genSaltSync(10);
-const secret = 'ertyuioiuhhcxzsefvbnjgfdrthj';
+const secret = process.env.SECRET;
 
 app.use(cors({ credentials: true, origin: 'http://localhost:5173' }));
 app.use(express.json());
@@ -150,8 +150,3 @@ app.get('/edit/:id', async (req, res) => {
 })
 
 app.listen(port);
-
-
-//BC3CVHi9Q5enV4FA
-
-//mongodb+srv://utkarsh:BC3CVHi9Q5enV4FA@cluster0.ykm3jlx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
