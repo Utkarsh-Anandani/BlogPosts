@@ -22,7 +22,7 @@ app.use(cookieParser());
 app.use('/uploads', express.static(__dirname + '/uploads'));
 
 const DB_URI = process.env.MONGODB_URI;
-const port = process.env.PORT;
+const port = process.env.PORT || 3000;
 
 mongoose.connect(DB_URI);
 
